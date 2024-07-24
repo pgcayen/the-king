@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4ua2oiua2t1f"
+path="res://.godot/imported/Dialog voice 2.wav-8821a4921fc709f57bbf2fd43c356c8c.sample"
+
+[deps]
+
+source_file="res://AssetsTheKing/Assets/Music/Retro Sounds/audio effects retro/Animal and caracters/characters/Dialogs sounds/Dialog voice 2.wav"
+dest_files=["res://.godot/imported/Dialog voice 2.wav-8821a4921fc709f57bbf2fd43c356c8c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

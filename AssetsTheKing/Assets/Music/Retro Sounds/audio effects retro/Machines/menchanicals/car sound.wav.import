@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bc50as73flpgi"
+path="res://.godot/imported/car sound.wav-cb7df8ff4864cd72dd1a26cca269a28a.sample"
+
+[deps]
+
+source_file="res://AssetsTheKing/Assets/Music/Retro Sounds/audio effects retro/Machines/menchanicals/car sound.wav"
+dest_files=["res://.godot/imported/car sound.wav-cb7df8ff4864cd72dd1a26cca269a28a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
