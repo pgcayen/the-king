@@ -258,3 +258,5 @@ sprite_frames = SubResource("SpriteFrames_m0ka5")
 animation = &"run"
 frame = 1
 frame_progress = 0.640173
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

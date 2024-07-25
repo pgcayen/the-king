@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcsw2phxtlncr"]
+[gd_scene load_steps=6 format=3 uid="uid://bcsw2phxtlncr"]
 
 [ext_resource type="PackedScene" uid="uid://bdr0fmf5ioq8c" path="res://Scenes/Player.tscn" id="1_qnhyh"]
 [ext_resource type="Texture2D" uid="uid://1bdvd6pt2ktd" path="res://AssetsTheKing/Assets/Kings and Pigs/Sprites/14-TileSets/Terrain (32x32).png" id="2_c2tcg"]
+[ext_resource type="PackedScene" uid="uid://dv7o384vhpkhq" path="res://Scenes/Ladder.tscn" id="3_p3ln7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_20y78"]
 texture = ExtResource("2_c2tcg")
@@ -1818,6 +1819,9 @@ terrain_set_0/terrain_2/color = Color(0, 0.956133, 0.530557, 1)
 sources/0 = SubResource("TileSetAtlasSource_20y78")
 
 [node name="Main" type="Node2D"]
+
+[node name="Ladder" parent="." instance=ExtResource("3_p3ln7")]
+position = Vector2(199, 543)
 
 [node name="Player" parent="." instance=ExtResource("1_qnhyh")]
 position = Vector2(151, 587)

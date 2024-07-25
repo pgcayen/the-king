@@ -5,21 +5,18 @@ extends CharacterBody2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var is_attacking = false
-var is_climbing = false
-
-# TODO: Put all this in git before next tutorial
 
 func _physics_process(delta):	
-	if is_climbing == true:
+	if Global.is_climbing == true:	
+		if !is_on_floor():
+			Global.is_attacking = false
+			$AnimatedSprite2D.play("climb")	
+		
 		if Input.is_action_pressed("ui_up"):
-			$AnimatedSprite2D.play("climb")
-			gravity = 100
-			velocity.y = -200
-	else:
-		gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-		is_climbing = false
-	
+			velocity.y = -100
+		else:
+			velocity.y = 35
+
 	# Add the gravity
 	if !is_on_floor():
 		velocity.y += gravity * delta
@@ -32,15 +29,13 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 
 	move_and_slide()
-	if !is_attacking:
+	
+	# if the character is climbing, jumping or attacking
+	# don't change current animation
+	if !Global.is_attacking && is_on_floor():
 		player_animations()	
 	
-func player_animations():
-	# if the character is climbing or jumping
-	# don't change current animation
-	if !is_on_floor():
-		pass
-	
+func player_animations():	
 	if Input.is_action_pressed("ui_left"):
 		$AnimatedSprite2D.flip_h = true
 		$AnimatedSprite2D.play("run")
@@ -57,13 +52,16 @@ func player_animations():
 
 func _input(event):
 	if event.is_action_pressed("ui_attack"):
-		is_attacking = true
+		Global.is_attacking = true
 		$AnimatedSprite2D.play("attack")
 			
 	if event.is_action_pressed("ui_jump") && is_on_floor():
 		velocity.y = jump_height
-		$AnimatedSprite2D.play("jump")
+		if !Global.is_attacking:
+			$AnimatedSprite2D.play("jump")	
 
 # signal that waits 
 func _on_animated_sprite_2d_animation_finished():
-	is_attacking = false
+	Global.is_attacking = false
+	Global.is_climbing = false
+
